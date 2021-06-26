@@ -50,7 +50,7 @@ void load_properties(const char *model) {
 void vendor_load_properties() {
     std::string device_region = android::base::GetProperty("ro.boot.product.cert", "");
 
-        load_properties("olive");
+        load_properties("pine");
 
 }
 

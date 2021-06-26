@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := olive
+PRODUCT_RELEASE_NAME := pine
 
 # Inherit from this configs
 $(call inherit-product, build/target/product/embedded.mk)
@@ -33,10 +33,10 @@ $(call inherit-product, build/target/product/core_64_bit.mk)
 #	$(LOCAL_PATH)/recovery.fstab:recovery.fstab
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_DEVICE := olive
-PRODUCT_NAME := omni_olive
+PRODUCT_DEVICE := pine
+PRODUCT_NAME := omni_pine
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 8
+PRODUCT_MODEL := Redmi 7A
 PRODUCT_MANUFACTURER := Xiaomi
 
 #Add treble compatibility
