@@ -18,9 +18,15 @@
 PRODUCT_RELEASE_NAME := pine
 
 # Inherit from this configs
-$(call inherit-product, build/target/product/embedded.mk)
-$(call inherit-product, vendor/omni/config/common.mk)
-$(call inherit-product, build/target/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
 
 #Treble Support
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/treble_common_64.mk)
@@ -43,11 +49,6 @@ PRODUCT_MANUFACTURER := Xiaomi
 #PRODUCT_FULL_TREBLE_OVERRIDE := true 
 
 #PRODUCT_PROPERTY_OVERRIDES := ro.treble.enabled=true
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
-    ro.product.device \
-    ro.product.name \
-    ro.build.product
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.secure=1 \

@@ -81,11 +81,6 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $
 # Fstab
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/recovery.fstab
 
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_pine
-TARGET_RECOVERY_DEVICE_MODULES := libinit_pine
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
-
 # QCOM Stuff
 BOARD_USES_QCOM_HARDWARE := true
 
@@ -102,7 +97,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
+BOARD_USES_QCOM_FBE_DECRYPTION := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_METADATA_PARTITION := true
 
@@ -133,6 +128,7 @@ TW_DEVICE_VERSION=$(shell date '+%Y%m%d')
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2025-12-31
+VENDOR_SECURITY_PATCH := 2025-12-31
 
 # Platform version
 PLATFORM_VERSION := 127
